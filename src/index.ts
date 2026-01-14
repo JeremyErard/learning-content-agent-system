@@ -29,7 +29,7 @@ app.get('/health', async (req, res) => {
 app.use('/api', routes);
 
 // Error handler
-app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error('Error:', err.message);
   res.status(500).json({ error: 'Internal server error' });
 });

@@ -95,7 +95,7 @@ export async function generateStructuredResponse<T>(
 
   try {
     return JSON.parse(cleaned) as T;
-  } catch (error) {
+  } catch {
     throw new Error(`Failed to parse JSON response: ${cleaned.slice(0, 200)}...`);
   }
 }
